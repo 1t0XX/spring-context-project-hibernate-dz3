@@ -1,6 +1,7 @@
 package com.geekbrains.spring.mvc.controllers;
 
-import com.geekbrains.spring.Product;
+import com.geekbrains.spring.Productt;
+import com.geekbrains.spring.mvc.model.Product;
 import com.geekbrains.spring.mvc.services.ProductsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,7 +24,7 @@ public class ProductsController {
 
     @GetMapping
     public String showAllProducts(Model model) {
-        List<com.geekbrains.spring.mvc.model.Product> products = productsService.getAllProducts();
+        List<Product> products = productsService.getAllProducts();
         model.addAttribute("products", products);
         return "all_products";
     }
@@ -35,8 +36,8 @@ public class ProductsController {
 
 
     @PostMapping("/add")
-    public String saveNewProduct(@ModelAttribute Product newProduct) {
-        productsService.saveOrUpdateProducts(newProduct);
+    public String saveNewProduct(@ModelAttribute Productt newProductt) {
+        productsService.saveOrUpdateProducts(newProductt);
         return "redirect:/product   s/";
     }
 
@@ -47,8 +48,8 @@ public class ProductsController {
     }
 
     @PostMapping("/edit")
-    public String modifyProduct(@ModelAttribute Product modifiedProduct) {
-        productsService.saveOrUpdateProducts(modifiedProduct);
+    public String modifyProduct(@ModelAttribute Productt modifiedProductt) {
+        productsService.saveOrUpdateProducts(modifiedProductt);
         return "redirect:/products/";
     }
 

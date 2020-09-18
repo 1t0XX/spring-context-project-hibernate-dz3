@@ -1,17 +1,17 @@
 package com.geekbrains.spring;
 
-public class Product {
+public class Productt {
     private long id;
     private String title;
     private long cost;
 
-    public Product(Long id, String title, Long cost){
+    public Productt(Long id, String title, Long cost){
         this.id = id;
         this.title = title;
         this.cost = cost;
     }
 
-    public Product(){}
+    public Productt(){}
 
 
     public long getId() {

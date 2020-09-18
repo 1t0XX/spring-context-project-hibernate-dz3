@@ -10,26 +10,26 @@ import java.util.List;
 @Component
 public class ProductRepository {
 
-    static List<Product> products;
+    static List<Productt> productts;
 
     @PostConstruct
     public void init(){
-        this.products= new ArrayList<>();
-        this.products.add(new Product(2L, "lodka", 34L));
-        this.products.add(new Product(3L, "kater", 340L));
-        this.products.add(new Product(4L, "korabl", 3400L));
+        this.productts = new ArrayList<>();
+        this.productts.add(new Productt(2L, "lodka", 34L));
+        this.productts.add(new Productt(3L, "kater", 340L));
+        this.productts.add(new Productt(4L, "korabl", 3400L));
     }
 
-    public static Product findById(Long id){
-        for(Product product : products){
-            if (product.getId().equals(id)) {
-                return product;
+    public static Productt findById(Long id){
+        for(Productt productt : productts){
+            if (productt.getId().equals(id)) {
+                return productt;
             }
         }
         throw new RuntimeException("Product not found");
     }
 
-    public List<Product> findAll(){
-        return Collections.unmodifiableList(products);
+    public List<Productt> findAll(){
+        return Collections.unmodifiableList(productts);
     }
 }
